@@ -1,6 +1,8 @@
+spec: 2.0
+
 services:
   - type: web
-    name: image-analyzer-api # お好きな名前に変更可能
+    name: image-analyzer-api
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
