@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: image-analyzer-api # お好きな名前に変更可能
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    build:
+      preBuildCommand: apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0
