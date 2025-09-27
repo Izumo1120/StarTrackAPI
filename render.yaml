@@ -1,6 +1,9 @@
+
+
 spec: 2.0
 
 services:
+  # サービス定義の開始 (インデント: 2スペース)
   - type: web
     name: image-analyzer-api
     env: python
@@ -8,4 +11,5 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     build:
+      # buildブロックの開始 (インデント: 4スペース)
       preBuildCommand: apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0
